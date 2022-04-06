@@ -1,14 +1,15 @@
+import { ComponentProps } from '../../types/props';
 import { GridCol } from './grid-col.component';
 import { GridRow } from './grid-row.component';
 
-interface GridProps {
-  children?: React.ReactChild | React.ReactChild[]
+interface GridProps extends ComponentProps {
 }
 
 const Grid = (props: GridProps) => {
 
   return (
     <div style={{
+      ...props.style,
       display: 'flex'
     }}>
       {props.children}
@@ -16,7 +17,7 @@ const Grid = (props: GridProps) => {
   )
 }
 
-Grid.Row = GridRow;
 Grid.Col = GridCol;
+Grid.Row = GridRow;
 
 export default Grid;
