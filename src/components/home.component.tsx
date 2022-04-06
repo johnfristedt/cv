@@ -25,7 +25,7 @@ export const Home = (props: HomeProps) => {
       </div>
 
       <h2 style={{ margin: '40px 0 20px 0' }}>{lang.experience}</h2>
-      // asd
+
       <Grid style={gridStyle}>
         <Grid.Col>
           {lang.experiences.map((exp, i) =>
@@ -36,7 +36,7 @@ export const Home = (props: HomeProps) => {
               <Grid.Row>
                 <h3><span style={{ color: 'green' }}>{exp.role.toUpperCase()}</span> {exp.place.toUpperCase()}</h3>
               </Grid.Row>
-              <Grid.Row style={{ marginBottom: i !== lang.experiences.length - 1 ? 30 : 0}}>
+              <Grid.Row style={{ marginBottom: i !== lang.experiences.length - 1 ? 30 : 0 }}>
                 {exp.points.map(point =>
                   <ul><li>{point}</li></ul>
                 )}
@@ -55,7 +55,7 @@ export const Home = (props: HomeProps) => {
               <Grid.Row>
                 <h3><span style={{ color: 'green' }}>{edu.degree.toUpperCase()}</span> {edu.place.toUpperCase()}</h3>
               </Grid.Row>
-              <Grid.Row style={{ marginBottom: i !== lang.educations.length - 1 ? 30 : 0}}>
+              <Grid.Row style={{ marginBottom: i !== lang.educations.length - 1 ? 30 : 0 }}>
                 {edu.info}
               </Grid.Row>
             </>
