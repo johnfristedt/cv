@@ -21,7 +21,10 @@ export const Home = (props: HomeProps) => {
         <h1><span style={{ fontWeight: 'normal' }}>John</span> Fristedt</h1>
         <div style={{ color: 'grey' }}>Ringvägen 14, Kungsängen · 073-388 62 71</div>
         <div><span style={{ color: 'green' }}>john.e.fristedt@gmail.com</span> · <a
-          href="https://www.linkedin.com/in/john-fristedt-16970676/" target="_blank">{lang.linkedIn}</a></div>
+          href="https://www.linkedin.com/in/john-fristedt-16970676/" target="_blank" rel="noreferrer">
+          {lang.linkedIn}
+        </a>
+        </div>
       </div>
 
       <h2 style={{ margin: '40px 0 20px 0' }}>{lang.experience}</h2>

@@ -1,5 +1,5 @@
 import { Education, educationsEn, educationsSv } from './educations';
-import { Experience, experiencesEn, experiencessv as experiencesSv } from './experiences';
+import { Experience, experiencesEn, experiencesSv } from './experiences';
 import { skillsEn, skillsSv } from './skills';
 
 export interface Months { january: string, february: string, march: string, april: string, may: string, june: string, july: string, august: string, september: string, october: string, november: string, december: string }
@@ -29,9 +29,9 @@ const en: Strings = {
 const sv: Strings = {
   experience: 'Erfarenhet',
   experiences: experiencesSv,
-  education: '',
+  education: 'Utbildning',
   educations: educationsSv, 
-  skillsTitle: '',
+  skillsTitle: 'Färdigheter',
   skills: skillsSv,
   months: { january: '', february: '', march: '', april: '', may: '', june: '', july: '', august: '', september: '', october: '', november: '', december: '' },
   linkedIn: 'LinkedIn Profil'

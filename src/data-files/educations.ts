@@ -12,15 +12,20 @@ export const educationsEn: Education[] = [
   },
   {
     place: 'Lernia',
-    degree: 'Yrkeshögskola',
+    degree: 'Vocational College',
     info: 'Full stack web development with agile methods.'
   }
 ];
 
 export const educationsSv: Education[] = [
   {
-    place: '',
-    degree: '',
-    info: ''
+    place: 'Blekinge Tekniska Högskola',
+    degree: 'Kandidatexamen i Mediateknik',
+    info: 'Studerade främst spelutveckling med kompletterande design och webbutvecklingskurser.'
+  },
+  {
+    place: 'Lernia',
+    degree: 'Yrkeshögskola',
+    info: 'Full stack webbutveckling med agila metoder.'
   }
 ]
