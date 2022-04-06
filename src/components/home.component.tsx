@@ -25,7 +25,7 @@ export const Home = (props: HomeProps) => {
       </div>
 
       <h2 style={{ margin: '40px 0 20px 0' }}>{lang.experience}</h2>
-
+      // asd
       <Grid style={gridStyle}>
         <Grid.Col>
           {lang.experiences.map((exp, i) =>
