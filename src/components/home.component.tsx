@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 
 import { LangContext } from '../App';
 import { Container } from './container/container.component';
@@ -9,8 +9,6 @@ interface HomeProps {
 }
 
 export const Home = (props: HomeProps) => {
-  
-  
   const lang = useContext(LangContext);
   const gridStyle: React.CSSProperties = {
     borderLeft: '5px dotted green',

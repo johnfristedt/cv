@@ -1,6 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
-
-import { LangContext } from '../App';
+import { useEffect } from 'react';
 
 type LangShort = 'en' | 'sv';
 type LangLong = 'English' | 'Svenska';
@@ -17,21 +15,16 @@ interface ControlsProps {
 }
 
 export const Controls = (props: ControlsProps) => {
-  const lang = useContext(LangContext);
-
-  const printMediaMatch = window.matchMedia('print');
-  const [isPrint, setIsPrint] = useState(printMediaMatch.matches);
+  // const lang = useContext(LangContext);
 
   useEffect(() => {
-    const handler = (e: MediaQueryListEvent) => setIsPrint(e.matches);
-    printMediaMatch.addEventListener('change', handler);
-    return () => printMediaMatch.removeEventListener('change', handler);
-  }, [props]);
-
-  useEffect(() => {
-    const cookies = document.cookie.split('; ');
-    const cookieLang = cookies.filter((x) => x.includes('lang'))[0].split('=')[1];
-    props.onSetLanguage(cookieLang as LangShort);
+    if (document.cookie.indexOf('lang') !== -1) {
+      const cookies = document.cookie.split('; ');
+      const cookieLang = cookies.filter((x) => x.includes('lang'))[0].split('=')[1];
+      props.onSetLanguage(cookieLang as LangShort);
+    } else {
+      props.onSetLanguage('en');
+    }
   }, [props]);
 
   const langs: Lang[] = [

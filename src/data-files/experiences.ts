@@ -49,7 +49,7 @@ export const experiencesSv: Experience[] = [
     place: 'Nordax Bank',
     points: [
       'Full stack webbutvecklare med React, .NET Core och SQL Server.',
-      'Utveckling och förvaldning av ett flertal applilkationer med .NET Framework och SQL Server.',
+      'Utveckling och förvaltning av ett flertal applilkationer med .NET Framework och SQL Server.',
       'TFS och Octopus Deploy.'
     ],
     role: 'Systemutvecklare'

@@ -11,9 +11,14 @@ export const educationsEn: Education[] = [
     info: 'Studied primarily game development with some complimentary design and web development courses.'
   },
   {
-    place: 'Lernia',
+    place: 'Lernia Yrkeshögskola',
     degree: 'Vocational College',
     info: 'Full stack web development with agile methods.'
+  },
+  {
+    place: 'Scrum.org',
+    degree: 'Professional Scrum Master I',
+    info: 'Certified scrum master by Scrum.org.'
   }
 ];
 
@@ -27,5 +32,10 @@ export const educationsSv: Education[] = [
     place: 'Lernia',
     degree: 'Yrkeshögskola',
     info: 'Full stack webbutveckling med agila metoder.'
+  },
+  {
+    place: 'Scrum.org',
+    degree: 'Professional Scrum Master I',
+    info: 'Certifierad scrum master hos Scrum.org.'
   }
 ]
