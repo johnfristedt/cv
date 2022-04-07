@@ -12,7 +12,8 @@ export interface Strings {
   skillsTitle: string;
   skills: string[];
   months: Months,
-  linkedIn: string
+  linkedIn: string,
+  print: string;
 }
 
 const en: Strings = {
@@ -23,7 +24,8 @@ const en: Strings = {
   skillsTitle: 'Skills',
   skills: skillsEn,
   months: { january: 'January', february: 'February', march: 'March', april: 'April', may: 'May', june: 'June', july: 'July', august: 'August', september: 'September', october: 'October', november: 'November', december: 'December' },
-  linkedIn: 'LinkedIn Profile'
+  linkedIn: 'LinkedIn Profile',
+  print: '🖨 Print'
 }
 
 const sv: Strings = {
@@ -34,7 +36,8 @@ const sv: Strings = {
   skillsTitle: 'Färdigheter',
   skills: skillsSv,
   months: { january: '', february: '', march: '', april: '', may: '', june: '', july: '', august: '', september: '', october: '', november: '', december: '' },
-  linkedIn: 'LinkedIn Profil'
+  linkedIn: 'LinkedIn Profil',
+  print: '🖨 Skriv ut'
 }
 
 export const strings = {

@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { Home } from './components/home.component';
 import { strings } from './data-files/strings';
-import { LanguageSelect } from './components/language-select.component';
+import { Controls } from './components/controls.component';
 
 export const LangContext = createContext(strings.en);
 
@@ -14,8 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <LanguageSelect onSetLanguage={(key) => setLang(strings[key])} />
+      <Controls onSetLanguage={(key) => setLang(strings[key])} />
       
+
       <LangContext.Provider value={lang}>
         <BrowserRouter>
           <Routes>

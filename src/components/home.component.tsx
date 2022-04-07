@@ -1,22 +1,32 @@
-import { useContext } from 'react'
-import { LangContext } from '../App'
+import { useContext, useEffect, useState } from 'react';
+
+import { LangContext } from '../App';
 import { Container } from './container.component';
-import Grid from "./grid/grid.component"
+import Grid from './grid/grid.component';
 
 interface HomeProps {
 
 }
 
 export const Home = (props: HomeProps) => {
+  const widthMediaMatch = window.matchMedia('(max-width: 900px)');
+  const [isSmallWidth, setIsSmallWidth] = useState(widthMediaMatch.matches);
+
+  useEffect(() => {
+    const handler = (e: MediaQueryListEvent) => setIsSmallWidth(e.matches);
+    widthMediaMatch.addEventListener('change', handler);
+    return () => widthMediaMatch.removeEventListener('change', handler);
+  }, [props]);
+  
   const lang = useContext(LangContext);
   const gridStyle: React.CSSProperties = {
     borderLeft: '5px dotted green',
     paddingLeft: 10,
-    marginBottom: 30
+    marginBottom: 40
   };
 
   return (
-    <Container width={60} style={{ margin: '0 auto 100px auto' }}>
+    <Container width={isSmallWidth ? 95 : 60} style={{ margin: '0 auto 100px auto' }}>
       <div style={{ textAlign: 'center' }}>
         <h1><span style={{ fontWeight: 'normal' }}>John</span> Fristedt</h1>
         <div style={{ color: 'grey' }}>Ringvägen 14, Kungsängen · 073-388 62 71</div>
@@ -27,12 +37,12 @@ export const Home = (props: HomeProps) => {
         </div>
       </div>
 
-      <h2 style={{ margin: '40px 0 20px 0' }}>{lang.experience}</h2>
+      <h2>{lang.experience}</h2>
 
       <Grid style={gridStyle}>
         <Grid.Col>
           {lang.experiences.map((exp, i) =>
-            <>
+            <span key={i}>
               <Grid.Row>
                 <h4 style={{ color: 'grey' }}>{exp.period.toUpperCase()}</h4>
               </Grid.Row>
@@ -40,42 +50,44 @@ export const Home = (props: HomeProps) => {
                 <h3><span style={{ color: 'green' }}>{exp.role.toUpperCase()}</span> {exp.place.toUpperCase()}</h3>
               </Grid.Row>
               <Grid.Row style={{ marginBottom: i !== lang.experiences.length - 1 ? 30 : 0 }}>
-                {exp.points.map(point =>
-                  <ul><li>{point}</li></ul>
+                {exp.points.map((point, i) =>
+                  <ul key={i}><li>{point}</li></ul>
                 )}
               </Grid.Row>
-            </>
+            </span>
           )}
         </Grid.Col>
       </Grid>
 
-      <h2 style={{ margin: '40px 0 20px 0' }}>{lang.education}</h2>
+      <h2>{lang.education}</h2>
 
       <Grid style={gridStyle}>
         <Grid.Col>
           {lang.educations.map((edu, i) =>
-            <>
+            <span key={i}>
               <Grid.Row>
                 <h3><span style={{ color: 'green' }}>{edu.degree.toUpperCase()}</span> {edu.place.toUpperCase()}</h3>
               </Grid.Row>
               <Grid.Row style={{ marginBottom: i !== lang.educations.length - 1 ? 30 : 0 }}>
                 {edu.info}
               </Grid.Row>
-            </>
+            </span>
           )}
         </Grid.Col>
       </Grid>
 
-      <h2 style={{ margin: '40px 0 20px 0' }}>{lang.skillsTitle}</h2>
+      <h2>{lang.skillsTitle}</h2>
 
       <ul style={{
-        listStyle: 'inside'
+        listStyle: 'inside',
+        padding: 0
       }}>
-        {lang.skills.map(skill =>
+        {lang.skills.map((skill, i) =>
           <li style={{
             display: 'inline-block',
             width: '50%'
-          }}>
+          }}
+            key={i}>
             <span style={{
               display: 'list-item',
               position: 'absolute',
@@ -90,3 +102,4 @@ export const Home = (props: HomeProps) => {
     </Container>
   )
 }
+
