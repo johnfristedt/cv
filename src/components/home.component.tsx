@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 
 import { LangContext } from '../App';
-import { Container } from './container.component';
+import { Container } from './container/container.component';
 import Grid from './grid/grid.component';
 
 interface HomeProps {
@@ -9,14 +9,7 @@ interface HomeProps {
 }
 
 export const Home = (props: HomeProps) => {
-  const widthMediaMatch = window.matchMedia('(max-width: 900px)');
-  const [isSmallWidth, setIsSmallWidth] = useState(widthMediaMatch.matches);
-
-  useEffect(() => {
-    const handler = (e: MediaQueryListEvent) => setIsSmallWidth(e.matches);
-    widthMediaMatch.addEventListener('change', handler);
-    return () => widthMediaMatch.removeEventListener('change', handler);
-  }, [props]);
+  
   
   const lang = useContext(LangContext);
   const gridStyle: React.CSSProperties = {
@@ -26,7 +19,7 @@ export const Home = (props: HomeProps) => {
   };
 
   return (
-    <Container width={isSmallWidth ? 95 : 60} style={{ margin: '0 auto 100px auto' }}>
+    <Container>
       <div style={{ textAlign: 'center' }}>
         <h1><span style={{ fontWeight: 'normal' }}>John</span> Fristedt</h1>
         <div style={{ color: 'grey' }}>Ringvägen 14, Kungsängen · 073-388 62 71</div>

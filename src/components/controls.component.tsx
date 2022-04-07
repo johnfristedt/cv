@@ -59,7 +59,7 @@ export const Controls = (props: ControlsProps) => {
           }}
           onClick={() => setLang(v.short)}>{v.flag} {v.long}</button>
       )}
-      <button
+      {/* <button
         type='button'
         style={{
           position: 'absolute',
@@ -71,7 +71,7 @@ export const Controls = (props: ControlsProps) => {
           window.print();
         }}>
         {lang.print}
-      </button>
+      </button> */}
     </span>
   )
 }

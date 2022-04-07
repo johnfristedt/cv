@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Controls onSetLanguage={(key) => setLang(strings[key])} />
-      
 
       <LangContext.Provider value={lang}>
         <BrowserRouter>
