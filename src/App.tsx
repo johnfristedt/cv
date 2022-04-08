@@ -3,9 +3,11 @@ import './App.css';
 import React, { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+
+import { Background } from './components/background/background.component';
+import { Controls } from './components/controls/controls.component';
 import { Home } from './components/home/home.component';
 import { strings } from './data-files/strings';
-import { Controls } from './components/controls/controls.component';
 
 export const LangContext = createContext(strings.en);
 
@@ -14,9 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <Controls onSetLanguage={(key) => setLang(strings[key])} />
-
+      <Background />
       <LangContext.Provider value={lang}>
+        <Controls onSetLanguage={(key) => setLang(strings[key])} />
+
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />}></Route>

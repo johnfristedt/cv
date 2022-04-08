@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
 import { LangContext } from '../../App';
+import { Background } from '../background/background.component';
 import { Container } from '../container/container.component';
 import Grid from '../grid/grid.component';
 
