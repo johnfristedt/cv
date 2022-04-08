@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
-import { LangContext } from '../App';
-import { Container } from './container/container.component';
-import Grid from './grid/grid.component';
+import { LangContext } from '../../App';
+import { Container } from '../container/container.component';
+import Grid from '../grid/grid.component';
 
 interface HomeProps {
 
