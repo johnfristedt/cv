@@ -1,6 +1,6 @@
-import { ComponentProps } from '../../types/props'
+import { CommonProps } from '../../types/props'
 
-interface GridRowProps extends ComponentProps {
+interface GridRowProps extends CommonProps {
 }
 
 export const GridRow = (props: GridRowProps) => {

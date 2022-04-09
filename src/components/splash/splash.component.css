@@ -1,0 +1,43 @@
+@keyframes shrink {
+  from {
+    height: 100vw;
+    width: 100vw;
+    top: calc(90vh - 100vw);
+    left: 0;
+  }
+
+  to {
+    height: 0;
+    width: 0;
+    top: 50vh;
+    left: 50vw;
+  }
+}
+
+/* #splash,
+#splash::after {
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: white;
+  animation: shrink 1s forwards ease-out;
+} */
+
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  animation: shrink 1s forwards ease-in-out;
+}
+
+/* #splash::after {
+  content: "";
+  right: 0;
+  border-left: 1px solid black;
+} */

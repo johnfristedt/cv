@@ -1,8 +1,8 @@
 import './container.component.css';
 
-import { ComponentProps } from '../../types/props';
+import { CommonProps } from '../../types/props';
 
-interface ContainerProps extends ComponentProps {
+interface ContainerProps extends CommonProps {
 }
 
 export const Container = (props: ContainerProps) => {
