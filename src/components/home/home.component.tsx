@@ -17,14 +17,14 @@ export const Home = (props: HomeProps) => {
   };
 
   return (
-    <Container>
+    <>
       <div style={{ textAlign: 'center' }}>
         <h1><span style={{ fontWeight: 'normal' }}>John</span> Fristedt</h1>
         <div style={{ color: 'grey' }}>Ringvägen 14, Kungsängen · 073-388 62 71</div>
-        <div><span style={{ color: 'green' }}>john.e.fristedt@gmail.com</span> · <a
+        <div><span style={{ color: 'green' }}>john.e.fristedt@gmail.com</span><span className='noPrint'> · <a
           href="https://www.linkedin.com/in/john-fristedt-16970676/" target="_blank" rel="noreferrer">
           {lang.linkedIn}
-        </a>
+        </a></span>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ export const Home = (props: HomeProps) => {
           </li>
         )}
       </ul>
-    </Container>
-  )
-}
+    </>
+  );
+};
 

@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Home } from './components/home/home.component';
 import { strings } from './data-files/strings';
 import { Controls } from './components/controls/controls.component';
+import { Container } from './components/container/container.component';
 
 export const LangContext = createContext(strings.en);
 
@@ -14,15 +15,17 @@ function App() {
 
   return (
     <div className="App">
-      <Controls onSetLanguage={(key) => setLang(strings[key])} />
+      <Container>
+        <Controls onSetLanguage={(key) => setLang(strings[key])} />
 
-      <LangContext.Provider value={lang}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </LangContext.Provider>
+        <LangContext.Provider value={lang}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+            </Routes>
+          </BrowserRouter>
+        </LangContext.Provider>
+      </Container>
     </div>
   );
 }
