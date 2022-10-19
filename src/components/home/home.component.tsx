@@ -50,7 +50,19 @@ export const Home = (props: HomeProps) => {
         </Grid.Col>
       </Grid>
 
-      <h2>{lang.education}</h2>
+      <Grid>
+        <Grid.Col>
+          <Grid.Row>
+            <h2>{lang.education}</h2>
+          </Grid.Row>
+        </Grid.Col>
+
+        <Grid.Col>
+          <Grid.Row>
+            <h2>{lang.skillsTitle}</h2>
+          </Grid.Row>
+        </Grid.Col>
+      </Grid>
 
       <Grid style={gridStyle}>
         <Grid.Col>
@@ -65,31 +77,31 @@ export const Home = (props: HomeProps) => {
             </span>
           )}
         </Grid.Col>
+        <Grid.Col>
+
+          <ul style={{
+            listStyle: 'inside',
+            padding: 0
+          }}>
+            {lang.skills.map((skill, i) =>
+              <li style={{
+                display: 'inline-block',
+                width: '50%'
+              }}
+                key={i}>
+                <span style={{
+                  display: 'list-item',
+                  position: 'absolute',
+                  color: 'green'
+                }}></span>
+                <span style={{
+                  marginLeft: 20
+                }}>{skill}</span>
+              </li>
+            )}
+          </ul>
+        </Grid.Col>
       </Grid>
-
-      <h2>{lang.skillsTitle}</h2>
-
-      <ul style={{
-        listStyle: 'inside',
-        padding: 0
-      }}>
-        {lang.skills.map((skill, i) =>
-          <li style={{
-            display: 'inline-block',
-            width: '50%'
-          }}
-            key={i}>
-            <span style={{
-              display: 'list-item',
-              position: 'absolute',
-              color: 'green'
-            }}></span>
-            <span style={{
-              marginLeft: 20
-            }}>{skill}</span>
-          </li>
-        )}
-      </ul>
     </>
   );
 };

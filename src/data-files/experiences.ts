@@ -7,7 +7,15 @@ export interface Experience {
 
 export const experiencesEn: Experience[] = [
   {
-    period: 'January 2020 - Present',
+    period: 'October 2022 - Ongoing',
+    place: 'AQC',
+    points: [
+      'Full stack web developer'
+    ],
+    role: 'Developer, contractor'
+  },
+  {
+    period: 'January 2020 - October 2022',
     place: 'Nobina Europe',
     points: [
       'Full stack web developer with Angular, .NET Core, SQL Server, Azure Cloud, Azure DevOps.'
@@ -37,7 +45,15 @@ export const experiencesEn: Experience[] = [
 
 export const experiencesSv: Experience[] = [
   {
-    period: 'Januari 2020 - Pågående',
+    period: 'Oktober 2022 - Pågående',
+    place: 'AQC',
+    points: [
+      'Full stack webbutvecklare'
+    ],
+    role: 'Systemutvecklare, konsult'
+  },
+  {
+    period: 'Januari 2020 - Oktober 2022',
     place: 'Nobina Europe',
     points: [
       'Full stack webbutvecklare med Angular, .NET Core, SQL Server, Azure Cloud, Azure DevOps.'
