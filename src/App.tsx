@@ -3,10 +3,11 @@ import './App.css';
 import React, { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+
+import { Container } from './components/container/container.component';
+import { Controls } from './components/controls/controls.component';
 import { Home } from './components/home/home.component';
 import { strings } from './data-files/strings';
-import { Controls } from './components/controls/controls.component';
-import { Container } from './components/container/container.component';
 
 export const LangContext = createContext(strings.en);
 
